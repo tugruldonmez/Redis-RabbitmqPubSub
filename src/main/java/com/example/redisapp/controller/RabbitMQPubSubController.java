@@ -25,6 +25,6 @@ public class RabbitMQPubSubController {
 
     @RabbitListener(queues = {"yeniqueue", "myqueue", "sonqueue"})
     public void listen(String message, @Header(AmqpHeaders.RECEIVED_ROUTING_KEY) String queueName) {
-        System.out.println("Received message from queue: " + queueName +"  "+"Message:"+ message );
+        System.out.println("Received message from: " + queueName +"  "+"Message:"+ message );
     }
 }
